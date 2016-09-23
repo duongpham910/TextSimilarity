@@ -31,7 +31,9 @@ public class Variables {
     };
     public static final String[] LAODONG_LINKS={
             "http://laodong.com.vn/rss/thoi-su-xa-hoi-1321.rss",
-            "http://laodong.com.vn/rss/the-gioi-62.rss",
+            //"http://laodong.com.vn/rss/the-gioi-62.rss",
+            //"http://laodong.com.vn/rss/van-hoa-giai-tri-1322.rss",
+            //"http://laodong.com.vn/rss/the-thao-60.rss",
     };
 
 

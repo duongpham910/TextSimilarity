@@ -13,8 +13,9 @@ import java.util.Scanner;
  * Created by DuongPham on 21/04/2016.
  */
 public class Out_Of_Place {
-    public String Filter(String tam){
-        String text = tam.replaceAll("\\`|\\~|\\!|\\@|\\#|\\$|\\%|\\^|\\&|\\*|\\(|"
+
+    public String Filter(String temp){
+        String text = temp.replaceAll("\\`|\\~|\\!|\\@|\\#|\\$|\\%|\\^|\\&|\\*|\\(|"
                 + "\\)|\\_|\\=|\\+|\\{|\\[|\\}|\\]|\\<|\\,|\\>|\\.|\\?|"
                 + "\\/|\\;|\\:|\\-|\\d+", "");
         text =text.toLowerCase();

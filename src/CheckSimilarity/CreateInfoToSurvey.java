@@ -99,7 +99,7 @@ public class CreateInfoToSurvey {
 
     public static void main(String[]args){
         ItemDAO id=new ItemDAO();
-        ArrayList<ItemNews> listItem=id.getListArticleSimilaryty("Ka Tăng");
+        ArrayList<ItemNews> listItem=id.getListArticleSimilaryty("Thanh Hóa");
          String heading="";
         String description="";
         int count=0;
@@ -129,7 +129,7 @@ public class CreateInfoToSurvey {
             }
         }
 //        try {
-//            OutputStream output = new FileOutputStream("out.txt");
+//            OutputStream output = new FileOutputStream("documentTesting.txt");
 //            PrintStream printOut = new PrintStream(output);
 //            System.setOut(printOut);
 //            System.out.println(count + " " + description);

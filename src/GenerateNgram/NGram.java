@@ -1,7 +1,10 @@
 package GenerateNgram;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 
 /**
@@ -49,12 +52,28 @@ public class NGram {
 
         for (int i = 0; i < listGram.size(); i++) {
             String temp = listGram.get(i);
-            System.out.println(temp + " " + counters.get(i));
+            System.out.println(temp + "   " + counters.get(i));
+            //System.out.println(temp);
         }
     }
 
     public static void main(String[] args) {
-        String text = "ant ant bee tempa tempb tempc";
+        String text="";
+
+        //input from file
+        StringBuilder sb=new StringBuilder();
+        try {
+            Scanner input=new Scanner(new FileInputStream("documentTesting.txt"));
+            while(input.hasNextLine()) {
+                sb.append(input.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        text=String.valueOf(sb);
+        //input hash code
+        //text = "ant ant bee tempa tempb tempc";
+
         generateNGram(1, text);
 
     }

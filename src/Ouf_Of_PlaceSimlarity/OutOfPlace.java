@@ -50,12 +50,11 @@ public class OutOfPlace {
             }
         }
         if(n>0){
-            return Math.log(docs.size()/(n));
+            return Math.log(docs.size()/(n))+1;
         }else{
-            return 0;
+            return 1;
         }
     }
-
     public double tfIdf(ArrayList<Gram> doc, ArrayList<ArrayList<Gram>> docs, String term) {
         return tf(doc, term) * idf(docs, term);
 
@@ -164,9 +163,6 @@ public class OutOfPlace {
                 if (g.getWord().equals(temp.getWord())) {
                     int pos = Math.abs(j - i);
                     flag = false;
-                    if (pos > max) {
-                        max = pos;
-                    }
                     DistanceMeasure = DistanceMeasure + pos;
                     break;
                 }
