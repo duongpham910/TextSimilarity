@@ -145,6 +145,78 @@ public class ImportData {
         }
     }
 
+    public static String parsePHAPLUAT(String url) {
+        try {
+
+            Document doc = Jsoup.connect(url).get();
+            Element content = doc.getElementById("main-detail");
+            // System.out.println(content.select("p").text());
+            return String.valueOf(content.select("p").text());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String parseVIETNAMNET(String url) {
+        try {
+
+            Document doc = Jsoup.connect(url).get();
+            Element content = doc.getElementById("ArticleContent");
+            // System.out.println(content.select("p").text());
+            return String.valueOf(content.select("p").text());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String parseCONGAN(String url) {
+        try {
+
+            Document doc = Jsoup.connect(url).get();
+            Element content = doc.getElementById("links");
+            String sb=content.select("p").text();
+            return String.valueOf(sb);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String parseBONGDA(String url) {
+        try {
+            Document doc = Jsoup.connect(url).get();
+            Elements content = doc.select("div[class=\"exp_content\"]");
+            StringBuilder sb = new StringBuilder();
+            for (Element con : content) {
+                sb.append(con.select("p").text());
+            }
+            return String.valueOf(sb);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String parseTIENPHONG(String url) {
+        try {
+            Document doc = Jsoup.connect(url).get();
+            System.out.println(doc.title());
+            Element content = doc.getElementById("article-body");
+            String sb=content.text();
+            return String.valueOf(sb);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static void executeParse(String[] link,String namePublisher){
         for(int index=0;index<link.length;index++){
             ArrayList<ItemNews> items=parser.getNewList(link[index]);
@@ -172,6 +244,22 @@ public class ImportData {
                     content=parseLAODONG(it.getLink());
                     it.setContent(content);
                     idao.addItem(it,"LAODONG");
+                }else if(namePublisher.equals("VIETNAMNET")){
+                    content=parseVIETNAMNET(it.getLink());
+                    it.setContent(content);
+                    idao.addItem(it,"VIETNAMNET");
+                } else if(namePublisher.equals("CONGAN")){
+                    content=parseCONGAN(it.getLink());
+                    it.setContent(content);
+                    idao.addItem(it,"CONGAN");
+                } else if(namePublisher.equals("PHAPLUAT")){
+                    content=parsePHAPLUAT(it.getLink());
+                    it.setContent(content);
+                    idao.addItem(it,"PHAPLUAT");
+                } else if(namePublisher.equals("TIENPHONG")){
+                    content=parseTIENPHONG(it.getLink());
+                    it.setContent(content);
+                    idao.addItem(it,"TIENPHONG");
                 }else if(namePublisher.equals("CHICAGO")){
                     content=parseCHICAGO(it.getLink());
                     it.setContent(content);
@@ -200,10 +288,14 @@ public class ImportData {
 
     public static void main(String[] args) {
         parser=new RssParser();
-        executeParse(Variables.VNEXPRESS_LINKS,"VNEXPRESS");
-        executeParse(Variables.DANTRI_LINKS,"DANTRI");
-        executeParse(Variables.TUOITRE_LINKS,"TUOITRE");
-        executeParse(Variables.LAODONG_LINKS,"LAODONG");
+        //executeParse(Variables.VNEXPRESS_LINKS,"VNEXPRESS");
+        //executeParse(Variables.DANTRI_LINKS,"DANTRI");
+        //executeParse(Variables.TUOITRE_LINKS,"TUOITRE");
+        //executeParse(Variables.LAODONG_LINKS,"LAODONG");
+        executeParse(Variables.VIETNAMNET_LINKS,"VIETNAMNET");
+        executeParse(Variables.CONGAN_LINKS,"CONGAN");
+        executeParse(Variables.PHAPLUAT_LINKS,"PHAPLUAT");
+        executeParse(Variables.TIENPHONG_LINKS,"TIENPHONG");
         //executeParse(Variables.CHICAGO_LINKS,"CHICAGO");
         //executeParse(Variables.DAILYMAIL_LINKS,"DAILYMAIL");
         //executeParse(Variables.NEWYORK_LINKS,"NEWYORK");

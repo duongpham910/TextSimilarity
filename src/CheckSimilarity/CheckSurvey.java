@@ -18,7 +18,7 @@ public class CheckSurvey {
     public static void main(String[]args){
         PatternDAO patternDAO=new PatternDAO();
         OutOfPlace outOfPlace=new OutOfPlace();
-        List<ArticlePattern> patternList=patternDAO.getListPattern(4);
+        List<ArticlePattern> patternList=patternDAO.getListPattern(30);
         for(int i=0;i<patternList.size();i++){
             ArticlePattern articlePattern=patternList.get(i);
             List<ItemNews> itemList=new ArrayList<ItemNews>();

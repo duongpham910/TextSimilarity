@@ -8,7 +8,7 @@ public class Variables {
             "http://vnexpress.net/rss/thoi-su.rss",
             "http://vnexpress.net/rss/the-gioi.rss",
             "http://vnexpress.net/rss/the-thao.rss",
-           "http://vnexpress.net/rss/giai-tri.rss",
+            "http://vnexpress.net/rss/giai-tri.rss",
 
     };
 
@@ -35,6 +35,23 @@ public class Variables {
             //"http://laodong.com.vn/rss/van-hoa-giai-tri-1322.rss",
             //"http://laodong.com.vn/rss/the-thao-60.rss",
     };
+
+    public static final String[] PHAPLUAT_LINKS={
+            "http://www.doisongphapluat.com/rss/tin-tuc.rss",
+            "http://www.doisongphapluat.com/rss/tin-the-gioi.rss",
+    };
+    public static final String[] VIETNAMNET_LINKS={
+            "http://vietnamnet.vn/rss/thoi-su.rss",
+            "http://vietnamnet.vn/rss/the-gioi.rss",
+    };
+    public static final String[] CONGAN_LINKS={
+            "http://cand.com.vn/rss/trang-chu/",
+    };
+    public static final String[] TIENPHONG_LINKS={
+            "http://www.tienphong.vn/rss/xa-hoi-2.rss",
+            "http://www.tienphong.vn/rss/the-gioi-5.rss",
+    };
+
 
 
     public static final String[] DAILYMAIL_LINKS={

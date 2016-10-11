@@ -97,9 +97,81 @@ public class CreateInfoToSurvey {
         }
     }
 
+    public static String parseHeadingPHAPLUAT(String url) {
+        try {
+
+            Document doc = Jsoup.connect(url).get();
+            Element content = doc.getElementById("main-detail");
+            String heading=content.select("b").text();
+            if(heading.equals("")){
+                heading=content.select("strong").text();
+            }
+            if(!heading.equals("")){
+                int index=heading.indexOf(".");
+                heading=heading.substring(0,index+1);
+            }
+            return heading;
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String parseHeadingVIETNAMNET(String url) {
+        try {
+
+            Document doc = Jsoup.connect(url).get();
+            Element content = doc.getElementById("ArticleContent");
+            String heading=content.select("strong").text();
+            if(heading.equals("")){
+                heading=content.select("b").text();
+            }
+
+            return heading;
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String parseHeadingCONGAN(String url) {
+        try {
+            Document doc = Jsoup.connect(url).get();
+            Elements content = doc.select("div[class=\"detail-head\"]");
+            StringBuilder sb = new StringBuilder();
+            for (Element con : content) {
+                sb.append(con.select("h2").text());
+            }
+
+            return String.valueOf(sb);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String parseHeadingTIENPHONG(String url) {
+        try {
+            Document doc = Jsoup.connect(url).get();
+            Elements content =doc.select("div[class=\"summary cms-desc\"]");
+            StringBuilder sb = new StringBuilder();
+            for (Element con : content) {
+                sb.append(con.text());
+            }
+            return String.valueOf(sb);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static void main(String[]args){
         ItemDAO id=new ItemDAO();
-        ArrayList<ItemNews> listItem=id.getListArticleSimilaryty("Thanh Hóa");
+        ArrayList<ItemNews> listItem=id.getListArticleSimilaryty("iran",4000);
          String heading="";
         String description="";
         int count=0;
@@ -121,6 +193,14 @@ public class CreateInfoToSurvey {
                     //heading="";
                 }else if(inews.getPublissher().equals("LAODONG")){
                     heading=parseHeadingLAODONG(inews.getLink());
+                }else if(inews.getPublissher().equals("PHAPLUAT")){
+                    heading=parseHeadingPHAPLUAT(inews.getLink());
+                }else if(inews.getPublissher().equals("CONGAN")){
+                    heading=parseHeadingCONGAN(inews.getLink());
+                }else if(inews.getPublissher().equals("TIENPHONG")){
+                    heading=parseHeadingTIENPHONG(inews.getLink());
+                }else if(inews.getPublissher().equals("VIETNAMNET")){
+                    heading=parseHeadingVIETNAMNET(inews.getLink());
                 }else{
                     heading=parseHeadingTUOITRE(inews.getLink());
                 }
@@ -128,14 +208,5 @@ public class CreateInfoToSurvey {
                 System.out.println();
             }
         }
-//        try {
-//            OutputStream output = new FileOutputStream("documentTesting.txt");
-//            PrintStream printOut = new PrintStream(output);
-//            System.setOut(printOut);
-//            System.out.println(count + " " + description);
-//            System.out.println(heading);
-//        }catch (IOException e){
-//            System.out.println(e);
-//        }
     }
 }
