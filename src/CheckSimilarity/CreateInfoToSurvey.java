@@ -171,7 +171,7 @@ public class CreateInfoToSurvey {
 
     public static void main(String[]args){
         ItemDAO id=new ItemDAO();
-        ArrayList<ItemNews> listItem=id.getListArticleSimilaryty("iran",4000);
+        ArrayList<ItemNews> listItem=id.getListArticleSimilaryty("mang thai",5000);
          String heading="";
         String description="";
         int count=0;

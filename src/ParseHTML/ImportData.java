@@ -288,14 +288,14 @@ public class ImportData {
 
     public static void main(String[] args) {
         parser=new RssParser();
-        //executeParse(Variables.VNEXPRESS_LINKS,"VNEXPRESS");
-        //executeParse(Variables.DANTRI_LINKS,"DANTRI");
-        //executeParse(Variables.TUOITRE_LINKS,"TUOITRE");
-        //executeParse(Variables.LAODONG_LINKS,"LAODONG");
-        executeParse(Variables.VIETNAMNET_LINKS,"VIETNAMNET");
-        executeParse(Variables.CONGAN_LINKS,"CONGAN");
-        executeParse(Variables.PHAPLUAT_LINKS,"PHAPLUAT");
-        executeParse(Variables.TIENPHONG_LINKS,"TIENPHONG");
+        executeParse(Variables.VNEXPRESS_LINKS,"VNEXPRESS");
+        executeParse(Variables.DANTRI_LINKS,"DANTRI");
+        executeParse(Variables.TUOITRE_LINKS,"TUOITRE");
+        executeParse(Variables.LAODONG_LINKS,"LAODONG");
+        //executeParse(Variables.VIETNAMNET_LINKS,"VIETNAMNET");
+        //executeParse(Variables.CONGAN_LINKS,"CONGAN");
+        //executeParse(Variables.PHAPLUAT_LINKS,"PHAPLUAT");
+        //executeParse(Variables.TIENPHONG_LINKS,"TIENPHONG");
         //executeParse(Variables.CHICAGO_LINKS,"CHICAGO");
         //executeParse(Variables.DAILYMAIL_LINKS,"DAILYMAIL");
         //executeParse(Variables.NEWYORK_LINKS,"NEWYORK");

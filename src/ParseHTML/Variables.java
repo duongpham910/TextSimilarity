@@ -8,7 +8,7 @@ public class Variables {
             "http://vnexpress.net/rss/thoi-su.rss",
             "http://vnexpress.net/rss/the-gioi.rss",
             "http://vnexpress.net/rss/the-thao.rss",
-            "http://vnexpress.net/rss/giai-tri.rss",
+            //"http://vnexpress.net/rss/giai-tri.rss",
 
     };
 
@@ -16,7 +16,7 @@ public class Variables {
             "http://dantri.com.vn/xa-hoi.rss",
             "http://dantri.com.vn/the-gioi.rss",
             "http://dantri.com.vn/the-thao.rss",
-            "http://dantri.com.vn/van-hoa.rss",
+            //"http://dantri.com.vn/van-hoa.rss",
 
 
     };
@@ -25,7 +25,7 @@ public class Variables {
             "http://tuoitre.vn/rss/tt-chinh-tri-xa-hoi.rss",
             "http://tuoitre.vn/rss/tt-the-gioi.rss",
             "http://tuoitre.vn/rss/tt-the-thao.rss",
-            "http://tuoitre.vn/rss/tt-van-hoa-giai-tri.rss",
+            //"http://tuoitre.vn/rss/tt-van-hoa-giai-tri.rss",
 
 
     };
