@@ -186,8 +186,8 @@ public class TF_IDF {
         }
         Collections.sort(doc3, new GramComparatorTFIDF());
 
-        for(int i=0;i<doc2.size();i++){
-            System.out.println(doc2.get(i).getWord()+" "+doc2.get(i).getTfidf());
+        for(int i=0;i<doc1.size();i++){
+            System.out.println(doc1.get(i).getWord()+" "+doc1.get(i).getTfidf());
         }
 
         double d12=ti.computeDistance1(doc1,doc2);
